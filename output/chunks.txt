@@ -1,0 +1,207 @@
+Bên
+B-NP
+A
+I-NP
+là
+O
+Công ty
+B-NP
+TNHH
+I-NP
+Thương mại
+I-NP
+Toàn Cầu
+I-NP
+,
+O
+có
+O
+trụ sở
+B-NP
+tại
+O
+45
+B-NP
+Phố Huế
+I-NP
+,
+O
+Hà Nội
+B-NP
+.
+O
+
+Bên
+B-NP
+B
+I-NP
+là
+O
+Công ty
+B-NP
+Cổ phần
+I-NP
+Dịch vụ
+I-NP
+Kỹ thuật số
+I-NP
+Đông Nam Á
+I-NP
+,
+O
+địa chỉ
+B-NP
+tại
+O
+12
+B-NP
+Nguyễn Huệ
+I-NP
+,
+O
+TP.HCM.
+B-NP
+
+Hai
+B-NP
+bên
+I-NP
+đồng ý
+O
+ký kết
+O
+hợp đồng
+B-NP
+này
+I-NP
+với
+O
+các
+B-NP
+điều khoản
+I-NP
+sau
+I-NP
+.
+O
+
+Bên
+B-NP
+A
+I-NP
+có
+O
+nghĩa vụ
+B-NP
+cung cấp
+O
+dịch vụ
+B-NP
+tư vấn
+I-NP
+phần mềm
+I-NP
+.
+O
+
+Và
+O
+Bên
+B-NP
+B
+I-NP
+có
+O
+trách nhiệm
+B-NP
+thanh toán
+O
+đúng
+O
+hạn
+B-NP
+.
+O
+
+Nếu
+O
+Bên
+B-NP
+B
+I-NP
+chậm
+O
+thanh toán
+O
+quá
+O
+15
+B-NP
+ngày
+I-NP
+,
+O
+Bên
+B-NP
+A
+I-NP
+có
+O
+quyền
+B-NP
+tạm
+O
+dừng
+O
+dịch vụ
+B-NP
+.
+O
+
+Hợp đồng
+B-NP
+này
+I-NP
+có
+O
+hiệu lực
+B-NP
+từ
+O
+ngày
+B-NP
+01/04/2025
+I-NP
+và
+O
+kết thúc
+O
+vào
+O
+ngày
+B-NP
+31/03/2026
+I-NP
+.
+O
+
+Mọi
+B-NP
+tranh chấp
+I-NP
+phát sinh
+O
+sẽ
+O
+được
+O
+giải quyết
+O
+tại
+O
+Tòa án
+B-NP
+nhân dân
+I-NP
+TP.HCM.
+I-NP

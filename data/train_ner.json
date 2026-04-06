@@ -1,0 +1,9 @@
+[
+  {
+    "text": "Bên A là Công ty TNHH ABC, địa chỉ tại 123 Đường Láng, Hà Nội.",
+    "entities": [
+      {"start": 7, "end": 23, "label": "ORG"},
+      {"start": 34, "end": 51, "label": "LOC"}
+    ]
+  }
+]

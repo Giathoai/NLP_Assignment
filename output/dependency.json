@@ -1,0 +1,537 @@
+[
+  {
+    "clause": "Bên A là Công ty TNHH Thương mại Toàn Cầu, có trụ sở tại 45 Phố Huế, Hà Nội.",
+    "dependencies": [
+      {
+        "Token": "Bên",
+        "Head": "Công ty",
+        "Dependency": "nsubj:nn"
+      },
+      {
+        "Token": "A",
+        "Head": "Bên",
+        "Dependency": "nmod"
+      },
+      {
+        "Token": "là",
+        "Head": "Công ty",
+        "Dependency": "cop"
+      },
+      {
+        "Token": "Công ty",
+        "Head": "root",
+        "Dependency": "root"
+      },
+      {
+        "Token": "TNHH",
+        "Head": "Công ty",
+        "Dependency": "nmod"
+      },
+      {
+        "Token": "Thương mại",
+        "Head": "TNHH",
+        "Dependency": "compound"
+      },
+      {
+        "Token": "Toàn Cầu",
+        "Head": "Công ty",
+        "Dependency": "nmod"
+      },
+      {
+        "Token": ",",
+        "Head": "có",
+        "Dependency": "punct"
+      },
+      {
+        "Token": "có",
+        "Head": "Công ty",
+        "Dependency": "acl:subj"
+      },
+      {
+        "Token": "trụ sở",
+        "Head": "có",
+        "Dependency": "obj"
+      },
+      {
+        "Token": "tại",
+        "Head": "45",
+        "Dependency": "case"
+      },
+      {
+        "Token": "45",
+        "Head": "có",
+        "Dependency": "obl:comp"
+      },
+      {
+        "Token": "Phố Huế",
+        "Head": "45",
+        "Dependency": "compound"
+      },
+      {
+        "Token": ",",
+        "Head": "Hà Nội",
+        "Dependency": "punct"
+      },
+      {
+        "Token": "Hà Nội",
+        "Head": "Phố Huế",
+        "Dependency": "conj"
+      },
+      {
+        "Token": ".",
+        "Head": "Công ty",
+        "Dependency": "punct"
+      }
+    ]
+  },
+  {
+    "clause": "Bên B là Công ty Cổ phần Dịch vụ Kỹ thuật số Đông Nam Á, địa chỉ tại 12 Nguyễn Huệ, TP.HCM.",
+    "dependencies": [
+      {
+        "Token": "Bên",
+        "Head": "Công ty",
+        "Dependency": "nsubj:nn"
+      },
+      {
+        "Token": "B",
+        "Head": "Bên",
+        "Dependency": "compound"
+      },
+      {
+        "Token": "là",
+        "Head": "Công ty",
+        "Dependency": "cop"
+      },
+      {
+        "Token": "Công ty",
+        "Head": "root",
+        "Dependency": "root"
+      },
+      {
+        "Token": "Cổ phần",
+        "Head": "Công ty",
+        "Dependency": "nmod"
+      },
+      {
+        "Token": "Dịch vụ",
+        "Head": "Cổ phần",
+        "Dependency": "nmod"
+      },
+      {
+        "Token": "Kỹ thuật số",
+        "Head": "Đông Nam Á",
+        "Dependency": "punct"
+      },
+      {
+        "Token": "Đông Nam Á",
+        "Head": "Cổ phần",
+        "Dependency": "nmod"
+      },
+      {
+        "Token": ",",
+        "Head": "địa chỉ",
+        "Dependency": "punct"
+      },
+      {
+        "Token": "địa chỉ",
+        "Head": "Công ty",
+        "Dependency": "conj"
+      },
+      {
+        "Token": "tại",
+        "Head": "Nguyễn Huệ",
+        "Dependency": "case"
+      },
+      {
+        "Token": "12",
+        "Head": "Nguyễn Huệ",
+        "Dependency": "nummod"
+      },
+      {
+        "Token": "Nguyễn Huệ",
+        "Head": "địa chỉ",
+        "Dependency": "obl"
+      },
+      {
+        "Token": ",",
+        "Head": "Công ty",
+        "Dependency": "punct"
+      },
+      {
+        "Token": "TP.HCM.",
+        "Head": "Công ty",
+        "Dependency": "conj"
+      }
+    ]
+  },
+  {
+    "clause": "Hai bên đồng ý ký kết hợp đồng này với các điều khoản sau.",
+    "dependencies": [
+      {
+        "Token": "Hai",
+        "Head": "bên",
+        "Dependency": "nummod"
+      },
+      {
+        "Token": "bên",
+        "Head": "đồng ý",
+        "Dependency": "nsubj"
+      },
+      {
+        "Token": "đồng ý",
+        "Head": "root",
+        "Dependency": "root"
+      },
+      {
+        "Token": "ký kết",
+        "Head": "hợp đồng",
+        "Dependency": "case"
+      },
+      {
+        "Token": "hợp đồng",
+        "Head": "đồng ý",
+        "Dependency": "obj"
+      },
+      {
+        "Token": "này",
+        "Head": "hợp đồng",
+        "Dependency": "det:pmod"
+      },
+      {
+        "Token": "với",
+        "Head": "điều khoản",
+        "Dependency": "case"
+      },
+      {
+        "Token": "các",
+        "Head": "điều khoản",
+        "Dependency": "det"
+      },
+      {
+        "Token": "điều khoản",
+        "Head": "đồng ý",
+        "Dependency": "obl"
+      },
+      {
+        "Token": "sau",
+        "Head": "điều khoản",
+        "Dependency": "nmod"
+      },
+      {
+        "Token": ".",
+        "Head": "đồng ý",
+        "Dependency": "punct"
+      }
+    ]
+  },
+  {
+    "clause": "Bên A có nghĩa vụ cung cấp dịch vụ tư vấn phần mềm.",
+    "dependencies": [
+      {
+        "Token": "Bên",
+        "Head": "có",
+        "Dependency": "nsubj"
+      },
+      {
+        "Token": "A",
+        "Head": "Bên",
+        "Dependency": "compound"
+      },
+      {
+        "Token": "có",
+        "Head": "root",
+        "Dependency": "root"
+      },
+      {
+        "Token": "nghĩa vụ",
+        "Head": "có",
+        "Dependency": "obj"
+      },
+      {
+        "Token": "cung cấp",
+        "Head": "nghĩa vụ",
+        "Dependency": "acl:subj"
+      },
+      {
+        "Token": "dịch vụ",
+        "Head": "cung cấp",
+        "Dependency": "obj"
+      },
+      {
+        "Token": "tư vấn",
+        "Head": "dịch vụ",
+        "Dependency": "acl:subj"
+      },
+      {
+        "Token": "phần mềm",
+        "Head": "tư vấn",
+        "Dependency": "obj"
+      },
+      {
+        "Token": ".",
+        "Head": "có",
+        "Dependency": "punct"
+      }
+    ]
+  },
+  {
+    "clause": "Và Bên B có trách nhiệm thanh toán đúng hạn.",
+    "dependencies": [
+      {
+        "Token": "Và",
+        "Head": "có",
+        "Dependency": "cc"
+      },
+      {
+        "Token": "Bên",
+        "Head": "có",
+        "Dependency": "nsubj"
+      },
+      {
+        "Token": "B",
+        "Head": "Bên",
+        "Dependency": "compound"
+      },
+      {
+        "Token": "có",
+        "Head": "root",
+        "Dependency": "root"
+      },
+      {
+        "Token": "trách nhiệm",
+        "Head": "có",
+        "Dependency": "obj"
+      },
+      {
+        "Token": "thanh toán",
+        "Head": "trách nhiệm",
+        "Dependency": "acl:subj"
+      },
+      {
+        "Token": "đúng",
+        "Head": "thanh toán",
+        "Dependency": "acomp"
+      },
+      {
+        "Token": "hạn",
+        "Head": "đúng",
+        "Dependency": "obj"
+      },
+      {
+        "Token": ".",
+        "Head": "có",
+        "Dependency": "punct"
+      }
+    ]
+  },
+  {
+    "clause": "Nếu Bên B chậm thanh toán quá 15 ngày, Bên A có quyền tạm dừng dịch vụ.",
+    "dependencies": [
+      {
+        "Token": "Nếu",
+        "Head": "thanh toán",
+        "Dependency": "mark"
+      },
+      {
+        "Token": "Bên",
+        "Head": "thanh toán",
+        "Dependency": "nsubj"
+      },
+      {
+        "Token": "B",
+        "Head": "Bên",
+        "Dependency": "compound"
+      },
+      {
+        "Token": "chậm",
+        "Head": "thanh toán",
+        "Dependency": "nsubj"
+      },
+      {
+        "Token": "thanh toán",
+        "Head": "có",
+        "Dependency": "advcl"
+      },
+      {
+        "Token": "quá",
+        "Head": "ngày",
+        "Dependency": "advmod"
+      },
+      {
+        "Token": "15",
+        "Head": "ngày",
+        "Dependency": "nummod"
+      },
+      {
+        "Token": "ngày",
+        "Head": "thanh toán",
+        "Dependency": "obl:tmod"
+      },
+      {
+        "Token": ",",
+        "Head": "có",
+        "Dependency": "punct"
+      },
+      {
+        "Token": "Bên A",
+        "Head": "có",
+        "Dependency": "nsubj"
+      },
+      {
+        "Token": "có",
+        "Head": "root",
+        "Dependency": "root"
+      },
+      {
+        "Token": "quyền",
+        "Head": "có",
+        "Dependency": "obj"
+      },
+      {
+        "Token": "tạm",
+        "Head": "quyền",
+        "Dependency": "amod"
+      },
+      {
+        "Token": "dừng",
+        "Head": "tạm",
+        "Dependency": "xcomp:adj"
+      },
+      {
+        "Token": "dịch vụ",
+        "Head": "dừng",
+        "Dependency": "obj"
+      },
+      {
+        "Token": ".",
+        "Head": "có",
+        "Dependency": "punct"
+      }
+    ]
+  },
+  {
+    "clause": "Hợp đồng này có hiệu lực từ ngày 01/04/2025 và kết thúc vào ngày 31/03/2026.",
+    "dependencies": [
+      {
+        "Token": "Hợp đồng",
+        "Head": "có",
+        "Dependency": "nsubj"
+      },
+      {
+        "Token": "này",
+        "Head": "Hợp đồng",
+        "Dependency": "det:pmod"
+      },
+      {
+        "Token": "có",
+        "Head": "root",
+        "Dependency": "root"
+      },
+      {
+        "Token": "hiệu lực",
+        "Head": "có",
+        "Dependency": "obj"
+      },
+      {
+        "Token": "từ",
+        "Head": "ngày",
+        "Dependency": "case"
+      },
+      {
+        "Token": "ngày",
+        "Head": "có",
+        "Dependency": "obl:tmod"
+      },
+      {
+        "Token": "01/04/2025",
+        "Head": "ngày",
+        "Dependency": "nmod"
+      },
+      {
+        "Token": "và",
+        "Head": "kết thúc",
+        "Dependency": "cc"
+      },
+      {
+        "Token": "kết thúc",
+        "Head": "có",
+        "Dependency": "conj"
+      },
+      {
+        "Token": "vào",
+        "Head": "ngày",
+        "Dependency": "case"
+      },
+      {
+        "Token": "ngày",
+        "Head": "kết thúc",
+        "Dependency": "obl:tmod"
+      },
+      {
+        "Token": "31/03/2026",
+        "Head": "ngày",
+        "Dependency": "nmod"
+      },
+      {
+        "Token": ".",
+        "Head": "có",
+        "Dependency": "punct"
+      }
+    ]
+  },
+  {
+    "clause": "Mọi tranh chấp phát sinh sẽ được giải quyết tại Tòa án nhân dân TP.HCM.",
+    "dependencies": [
+      {
+        "Token": "Mọi",
+        "Head": "tranh chấp",
+        "Dependency": "det"
+      },
+      {
+        "Token": "tranh chấp",
+        "Head": "giải quyết",
+        "Dependency": "nsubj:pass"
+      },
+      {
+        "Token": "phát sinh",
+        "Head": "tranh chấp",
+        "Dependency": "nmod"
+      },
+      {
+        "Token": "sẽ",
+        "Head": "giải quyết",
+        "Dependency": "advmod"
+      },
+      {
+        "Token": "được",
+        "Head": "giải quyết",
+        "Dependency": "aux:pass"
+      },
+      {
+        "Token": "giải quyết",
+        "Head": "root",
+        "Dependency": "root"
+      },
+      {
+        "Token": "tại",
+        "Head": "Tòa án",
+        "Dependency": "case"
+      },
+      {
+        "Token": "Tòa án",
+        "Head": "giải quyết",
+        "Dependency": "obl"
+      },
+      {
+        "Token": "nhân dân",
+        "Head": "Tòa án",
+        "Dependency": "compound"
+      },
+      {
+        "Token": "TP.HCM.",
+        "Head": "giải quyết",
+        "Dependency": "punct"
+      }
+    ]
+  }
+]

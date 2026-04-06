@@ -1,0 +1,34 @@
+
+============================================================
+  Task 1.1 – Clause Segmenter (segmenter.py)
+============================================================
+  [92m[PASS][0m segment_clauses() trả về 8 mệnh đề (> 0)
+  [92m[PASS][0m Tất cả mệnh đề là chuỗi không rỗng
+  [92m[PASS][0m Câu đơn không bị tách nhầm (kết quả: 1 mệnh đề)
+  [92m[PASS][0m Mỗi mệnh đề kết thúc bằng '.' hoặc ';'
+  [92m[PASS][0m Chữ cái đầu mỗi mệnh đề được viết hoa
+
+  [94m[INFO][0m Mẫu 3 mệnh đề đầu tiên:
+    1. Bên A là Công ty TNHH Thương mại Toàn Cầu, có trụ sở tại 45 Phố Huế, Hà Nội.
+    2. Bên B là Công ty Cổ phần Dịch vụ Kỹ thuật số Đông Nam Á, địa chỉ tại 12 Nguyễn Huệ, TP.HCM.
+    3. Hai bên đồng ý ký kết hợp đồng này với các điều khoản sau.
+
+============================================================
+  Task 1.2 – Noun-Phrase Chunker (chunker.py) – IOB Tagging
+============================================================
+  [91m[FAIL][0m Lỗi khi import/chạy chunker: No module named 'underthesea'
+
+============================================================
+  Task 1.3 – Dependency Parser (parser.py)
+============================================================
+  [91m[FAIL][0m Lỗi khi import/chạy parser: No module named 'spacy'
+
+============================================================
+  Integration Test – segmenter → chunker → parser
+============================================================
+  [91m[FAIL][0m Lỗi pipeline tích hợp: No module named 'underthesea'
+
+============================================================
+  KẾT QUẢ: 5/8 test passed  [91m✗ 3 test FAIL[0m
+============================================================
+
