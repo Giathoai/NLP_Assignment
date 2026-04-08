@@ -9,10 +9,6 @@ INPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "output", "clau
 OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "output", "srl_results.json")
 
 def get_subtree(node_id, deps):
-    """
-    Đệ quy lấy toàn bộ các từ phụ thuộc (subtree) của một node trên cây cú pháp.
-    node_id: ID bắt đầu từ 1.
-    """
     children = [node_id]
     for i, (word, head_id, dep_label) in enumerate(deps):
         curr_id = i + 1
