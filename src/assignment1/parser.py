@@ -13,26 +13,22 @@ def parse_dependencies(text: str) -> list[dict]:
     
     results = []
     for clause in clauses:
-        # parsed_data thường là: [(word, head_id, dep_label), ...]
         parsed_data = dependency_parse(clause)
         
-        # Tạo bản đồ ID -> Từ để tìm tên của Head [cite: 104, 113]
         id_to_text = {i+1: item[0] for i, item in enumerate(parsed_data)}
         id_to_text[0] = "root" 
 
         tokens = []
         for item in parsed_data:
-            # Xử lý an toàn cho cả phiên bản underthesea cũ và mới
             if len(item) == 3:
                 word, head_id, dep_label = item
             else:
-                # Nếu có 4 phần tử (id, word, head, label)
                 _, word, head_id, dep_label = item
             
             tokens.append({
                 "Token": word,
-                "Head": id_to_text.get(head_id, "root"), # Trả về từ gốc [cite: 111, 113]
-                "Dependency": dep_label # Ví dụ: nsubj, obj, root [cite: 105, 118-121]
+                "Head": id_to_text.get(head_id, "root"),
+                "Dependency": dep_label 
             })
             
         results.append({

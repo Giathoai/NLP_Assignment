@@ -1,0 +1,69 @@
+[
+  {
+    "clause": "Bên A là Công ty TNHH Thương mại Toàn Cầu, có trụ sở tại 45 Phố Huế, Hà Nội.",
+    "predicate": "là",
+    "roles": {
+      "Agent": "Bên A",
+      "Theme": "Công ty TNHH Thương mại Toàn Cầu , có trụ sở tại 45 Phố Huế , Hà Nội"
+    }
+  },
+  {
+    "clause": "Bên B là Công ty Cổ phần Dịch vụ Kỹ thuật số Đông Nam Á, địa chỉ tại 12 Nguyễn Huệ, TP.HCM.",
+    "predicate": "là",
+    "roles": {
+      "Agent": "Bên B",
+      "Theme": "Công ty Cổ phần Dịch vụ Kỹ thuật số Đông Nam Á , địa chỉ tại 12 Nguyễn Huệ , TP.HCM"
+    }
+  },
+  {
+    "clause": "Hai bên đồng ý ký kết hợp đồng này với các điều khoản sau.",
+    "predicate": "đồng ý",
+    "roles": {
+      "Agent": "Hai bên",
+      "Theme": "ký kết hợp đồng này",
+      "Manner": "với các điều khoản sau"
+    }
+  },
+  {
+    "clause": "Bên A có nghĩa vụ cung cấp dịch vụ tư vấn phần mềm.",
+    "predicate": "có",
+    "roles": {
+      "Agent": "Bên A",
+      "Theme": "nghĩa vụ cung cấp dịch vụ tư vấn phần mềm"
+    }
+  },
+  {
+    "clause": "Và Bên B có trách nhiệm thanh toán đúng hạn.",
+    "predicate": "có",
+    "roles": {
+      "Agent": "Bên B",
+      "Theme": "trách nhiệm thanh toán đúng hạn"
+    }
+  },
+  {
+    "clause": "Nếu Bên B chậm thanh toán quá 15 ngày, Bên A có quyền tạm dừng dịch vụ.",
+    "predicate": "có",
+    "roles": {
+      "Condition": "Nếu Bên B chậm thanh toán quá 15 ngày",
+      "Agent": "Bên A",
+      "Theme": "quyền tạm dừng dịch vụ"
+    }
+  },
+  {
+    "clause": "Hợp đồng này có hiệu lực từ ngày 01/04/2025 và kết thúc vào ngày 31/03/2026.",
+    "predicate": "có",
+    "roles": {
+      "Agent": "Hợp đồng này",
+      "Theme": "hiệu lực",
+      "Time": "từ ngày 01/04/2025"
+    }
+  },
+  {
+    "clause": "Mọi tranh chấp phát sinh sẽ được giải quyết tại Tòa án nhân dân TP.HCM.",
+    "predicate": "giải quyết",
+    "roles": {
+      "Theme": "Mọi tranh chấp phát sinh",
+      "Location": "tại Tòa án nhân dân TP.HCM"
+    }
+  }
+]
