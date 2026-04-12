@@ -137,17 +137,10 @@ if _has_underthesea:
 
 section("Task 1.3 – Dependency Parser (parser.py)")
 
-_has_parser = False
-try:
-    import spacy as _spacy
-    _spacy.load("xx_sent_ud_sm")
-    _has_parser = True
-except ImportError:
-    skip("spacy chua duoc cai dat  ->  pip install spacy")
-    skip("Bo qua cac test parser (5 test)")
-except OSError:
-    skip("Model xx_sent_ud_sm chua duoc tai  "
-         "->  python -m spacy download xx_sent_ud_sm")
+_has_parser = _has_underthesea
+
+if not _has_parser:
+    skip("underthesea chua duoc cai dat  ->  pip install underthesea")
     skip("Bo qua cac test parser (5 test)")
 
 if _has_parser:
@@ -183,7 +176,7 @@ if _has_parser:
 
         print(f"\n  [INFO] 5 token dau tien cua menh de 1:")
         for tok in dep_data[0]["dependencies"][:5]:
-            print(f"    {tok['Token']:15s} -> {tok['Head']:15s} [{tok['Dependency']}]")
+            print(f"    {str(tok['Token']):15s} -> {str(tok['Head']):15s} [{tok['Dependency']}]")
 
     except Exception as e:
         print(f"  [FAIL] Loi parser: {e}")
@@ -243,8 +236,6 @@ print(f"{'=' * 55}\n")
 
 if not _has_underthesea:
     print("  [HINT] Cai underthesea:     pip install underthesea")
-if not _has_parser:
-    print("  [HINT] Tai spaCy model:     python -m spacy download xx_sent_ud_sm")
 print()
 
 sys.exit(0 if failed == 0 else 1)

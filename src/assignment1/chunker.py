@@ -1,68 +1,107 @@
 import sys
 import os
 import re
-from underthesea import chunk, word_tokenize
-
+from underthesea import chunk as ud_chunk
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", ".."))
 from src.utils.file_io import read_text, write_text
 
 INPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "output", "clauses.txt")
 OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "output", "chunks.txt")
 
-RE_NUMBERING = re.compile(r'^\d+\.\s*')
-RE_BEN_AB = re.compile(r'^([Bb]ên)\s*([A-ZĐ])$')
+
+def _should_merge(prev_pos: str, curr_pos: str, curr_word: str) -> bool:
+    n_syl = len(curr_word.split())
+
+    # Rule 1 – proper noun continuation
+    if curr_pos == 'Np' and n_syl <= 1:
+        return True
+    # Rule 2 – noun after determiner / classifier
+    if curr_pos in ('N', 'Nu', 'Ny') and prev_pos == 'L':
+        return True
+    # Rule 3 – noun after numeral
+    if curr_pos in ('N', 'Nu') and prev_pos == 'M':
+        return True
+    # Rule 4 – numeral after noun
+    if curr_pos == 'M' and prev_pos in ('N', 'Nu', 'Ny'):
+        return True
+    # Rule 5 – single-syllable nouns merge
+    if n_syl <= 1 and curr_pos in ('N', 'Nu', 'Ny') and prev_pos in ('N', 'Np', 'Nu', 'Ny'):
+        return True
+
+    return False
+
+
+def chunk_clause_iob(clause: str) -> list:
+    chunk_results = ud_chunk(clause)
+
+    output = []
+    prev_compound_pos = None   # POS of the last compound word
+    prev_was_np = False
+
+    for word, pos, chunk_tag in chunk_results:
+        syllables = word.split()          # compound words use spaces
+        is_np = chunk_tag in ('B-NP', 'I-NP')
+
+        if is_np:
+            merge = (chunk_tag == 'B-NP'
+                     and prev_was_np
+                     and _should_merge(prev_compound_pos, pos, word))
+
+            for idx, syl in enumerate(syllables):
+                if chunk_tag == 'B-NP' and idx == 0:
+                    output.append((syl, 'I-NP' if merge else 'B-NP'))
+                else:
+                    output.append((syl, 'I-NP'))
+
+            prev_compound_pos = pos
+            prev_was_np = True
+        else:
+            for syl in syllables:
+                output.append((syl, 'O'))
+            prev_compound_pos = pos
+            prev_was_np = False
+
+    return output
+
 
 def chunk_clauses(text: str) -> str:
+    clauses = [
+        line.strip()
+        for line in text.strip().splitlines()
+        if line.strip()
+    ]
+
     lines = []
-    clauses = text.strip().split('\n')
-    
-    for clause_text in clauses:
-        clause_text = clause_text.strip()
-        clause_text = RE_NUMBERING.sub('', clause_text)
-        if not clause_text:
-            continue
+    for clause in clauses:
+        iob_tags = chunk_clause_iob(clause)
+        for token, tag in iob_tags:
+            lines.append(f'{token}\t{tag}')
+        lines.append('')   # blank line between clauses
 
-        clause_text = re.sub(r'([Bb]ên)\s*([A-ZĐ])', r'\1 \2', clause_text)
-        tokens = word_tokenize(clause_text)
-        processed_text = " ".join([t.replace('_', ' ') for t in tokens])
-            
-        tagged = chunk(processed_text)
-        prev_tag_type = None 
-        
-        for i, (word, pos, chunk_tag) in enumerate(tagged):
-            match = RE_BEN_AB.match(word)
-            if match:
-                part1, part2 = match.group(1), match.group(2)
-                iob1 = "B-NP" if prev_tag_type != "NP" else "I-NP"
-                lines.append(f"{part1}")
-                lines.append(f"{iob1}")
-                lines.append(f"{part2}")
-                lines.append(f"I-NP")
-                prev_tag_type = "NP"
-                continue
+    return '\n'.join(lines)
 
-            legal_keywords = ["tnhh", "cổ phần", "thương mại", "dịch vụ", "tư vấn", "phần mềm", "đúng hạn", "hạn"]
-            is_legal_suffix = word.lower() in legal_keywords
-            is_identifier = (word in ["A", "B", "C"] and i > 0 and tagged[i-1][0].lower() == "bên")
-            
-            if "NP" in chunk_tag or is_legal_suffix or is_identifier:
-                iob = "I-NP" if prev_tag_type == "NP" else "B-NP"
-                prev_tag_type = "NP"
-            else:
-                iob = "O"
-                prev_tag_type = "O"
-                
-            lines.append(f"{word}")
-            lines.append(f"{iob}")
-            
-        lines.append("") 
-        
-    return "\n".join(lines)
+
 def main():
     raw_text = read_text(INPUT_PATH)
     result = chunk_clauses(raw_text)
     write_text(OUTPUT_PATH, result)
-    print(f"[chunker] IOB-tagged output written to {OUTPUT_PATH}")
 
-if __name__ == "__main__":
+    print(f'[chunker] Input:  {INPUT_PATH}')
+    print(f'[chunker] Output: {OUTPUT_PATH}')
+
+    clauses = [
+        line.strip()
+        for line in raw_text.strip().splitlines()
+        if line.strip()
+    ]
+    print(f'[chunker] Clauses processed: {len(clauses)}')
+
+    for idx, clause in enumerate(clauses, 1):
+        iob_tags = chunk_clause_iob(clause)
+        print(f'\n--- Clause {idx}: {clause}')
+        for token, tag in iob_tags:
+            print(f'  {token:<15} {tag}')
+
+
+if __name__ == '__main__':
     main()
