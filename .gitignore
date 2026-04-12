@@ -1,0 +1,11 @@
+.venv/
+.vscode/
+
+# Python cache artifacts
+__pycache__/
+*.py[cod]
+
+# Generated outputs
+output/chroma_db/
+output/intent_classification.txt
+output/ner_results.json

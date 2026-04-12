@@ -9,7 +9,7 @@ INPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "input", "raw_c
 OUTPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "output", "clauses.txt")
 
 CLAUSE_SPLITTERS = re.compile(
-    r"\s*,\s*(?=[Nn]ếu|[Vv]à|[Hh]oặc|[Nn]hưng|[Dd]o đó|[Vv]ì vậy|[Tt]rong trường hợp|[Mm]ặc dù|[Tt]uy nhiên))\s*",
+    r"\s*,\s*(?=[Nn]ếu|[Vv]à|[Hh]oặc|[Nn]hưng|[Dd]o đó|[Vv]ì vậy|[Tt]rong trường hợp|[Mm]ặc dù|[Tt]uy nhiên)\s*",
 )
 
 def segment_clauses(text: str) -> list[str]:

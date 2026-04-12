@@ -14,13 +14,18 @@ INPUT_PATH = os.path.join(os.path.dirname(__file__), "..", "..", "input", "raw_c
 CHROMA_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "output", "chroma_db")
 
 COLLECTION_NAME = "contract_clauses"
+_EMBEDDER = None
 
 
 def get_embedder():
     """Return a sentence-transformers embedding function."""
+    global _EMBEDDER
+    if _EMBEDDER is not None:
+        return _EMBEDDER
+
     from sentence_transformers import SentenceTransformer
-    model = SentenceTransformer("all-MiniLM-L6-v2")
-    return model
+    _EMBEDDER = SentenceTransformer("all-MiniLM-L6-v2")
+    return _EMBEDDER
 
 
 def build_vector_db(clauses: list[str]):
@@ -54,7 +59,13 @@ def query_vector_db(query: str, n_results: int = 5) -> list[dict]:
     import chromadb
 
     client = chromadb.PersistentClient(path=CHROMA_DIR)
-    collection = client.get_collection(COLLECTION_NAME)
+    try:
+        collection = client.get_collection(COLLECTION_NAME)
+    except Exception:
+        # Tự build DB nếu chưa có collection.
+        raw_text = read_text(INPUT_PATH)
+        clauses = segment_clauses(raw_text)
+        collection = build_vector_db(clauses)
 
     embedder = get_embedder()
     query_embedding = embedder.encode([query]).tolist()
